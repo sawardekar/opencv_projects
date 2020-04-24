@@ -1,0 +1,48 @@
+
+# Image detectation run command:
+
+python deep_learning_object_detection.py --prototxt MobileNetSSD_deploy.prototxt.txt --model MobileNetSSD_deploy.caffemodel --image images/example_06.jpg 
+
+# Image detectation documentation url link refer path
+
+https://www.pyimagesearch.com/2017/09/11/object-detection-with-deep-learning-and-opencv/
+
+# Image recongination run command:
+
+python extract_embeddings.py --dataset dataset --embeddings output/embeddings.pickle --detector face_detection_model --embedding-model openface_nn4.small2.v1.t7
+
+python train_model.py --embeddings output/embeddings.pickle --recognizer output/recognizer.pickle --le output/le.pickle
+
+python recognize.py --detector face_detection_model --embedding-model openface_nn4.small2.v1.t7 --recognizer output/recognizer.pickle --le output/le.pickle --image images/sanket.JPG
+
+python recognize_video.py --detector face_detection_model --embedding-model openface_nn4.small2.v1.t7 --recognizer output/recognizer.pickle --le output/le.pickle
+
+
+# image reconginzation documentation url path refer:
+https://www.pyimagesearch.com/2018/09/24/opencv-face-recognition/
+
+# requirement packages:
+software list
+face-recognition-models 0.3.0
+imutils                 0.5.3
+joblib                  0.14.1
+numpy                   1.18.2
+opencv-python           4.2.0.34
+pip                     20.0.2
+scikit-learn            0.21.3
+scipy                   1.4.1
+setuptools              41.2.0
+shiboken2               5.14.1
+wheel                   0.34.2
+
+
+### image search engine hobbit-lotr-image-search-engine
+
+python index.py --dataset images --index index.cpickle
+
+python search.py --dataset images --index index.cpickle
+
+python search_external.py --dataset images --index index.cpickle --query queries/rivendell-query.png
+
+# image search engine documentation url path refer:
+https://www.pyimagesearch.com/2014/01/27/hobbits-and-histograms-a-how-to-guide-to-building-your-first-image-search-engine-in-python/
