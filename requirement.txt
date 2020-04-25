@@ -1,0 +1,13 @@
+Cython==0.29.16
+face-recognition-models==0.3.0
+imutils==0.5.3
+joblib==0.14.1
+numpy==1.18.2
+opencv-python==4.2.0.34
+Pillow==7.1.1
+PySide2==5.14.1
+pytesseract==0.3.4
+scikit-learn==0.21.3
+scipy==1.4.1
+shiboken2==5.14.1
+tesseract==0.1.3
