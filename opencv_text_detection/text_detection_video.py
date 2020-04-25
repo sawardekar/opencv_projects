@@ -11,7 +11,10 @@ import argparse
 import imutils
 import time
 import cv2
+# add tesseract.exe path and install tesseract-ocr on system for more detail refer to below link
+# https://github.com/UB-Mannheim/tesseract/wiki 
 pytesseract.pytesseract.tesseract_cmd = r"C:\Users\Sawardekar\AppData\Local\Tesseract-OCR\tesseract.exe"
+
 def decode_predictions(scores, geometry):
 	# grab the number of rows and columns from the scores volume, then
 	# initialize our set of bounding box rectangles and corresponding
@@ -162,9 +165,11 @@ while True:
 		# extract the actual padded ROI
 		roi = orig[startY:endY, startX:endX]
 		config = ("-l eng --oem 1 --psm 7")
+		# detect image of text to convert into string and to store on text variable 
 		text = pytesseract.image_to_string(roi, config=config)
 		# draw the bounding box on the frame
 		cv2.rectangle(orig, (startX, startY), (endX, endY), (0, 255, 0), 2)
+		# display text on bove rectangle frame
 		cv2.putText(orig, text, (startX, startY - 20),cv2.FONT_HERSHEY_SIMPLEX, 1.2, (0, 0, 255), 3)
 
 	# update the FPS counter

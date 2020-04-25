@@ -8,7 +8,10 @@ import numpy as np
 import pytesseract
 import argparse
 import cv2
+# add tesseract.exe path and install tesseract-ocr on system for more detail refer to below link
+# https://github.com/UB-Mannheim/tesseract/wiki 
 pytesseract.pytesseract.tesseract_cmd = r"C:\Users\Sawardekar\AppData\Local\Tesseract-OCR\tesseract.exe"
+
 def decode_predictions(scores, geometry):
 	# grab the number of rows and columns from the scores volume, then
 	# initialize our set of bounding box rectangles and corresponding
